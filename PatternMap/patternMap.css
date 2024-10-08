@@ -1,0 +1,208 @@
+:root {
+    --size: 60px;
+    --length: 500px;
+    --half-length: 250px;
+    --half-begin: 225px;
+    --length-begin: 450px;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    flex-direction: row;
+    padding: 0%;
+    margin: 0%;
+}
+.controlerContainers{
+    /* position: absolute; */
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    left: 50vw;
+    background-color: rgb(233, 233, 233);
+    padding: 20px;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------- */
+
+body{
+    position: relative;
+}
+.canvas{
+    background-color: transparent;
+    width: var(--length);
+    height: var(--length);
+    position: absolute;
+    left: var(--size);
+    top: var(--size);
+}
+
+
+
+.shape{
+    background-color:rgba(204, 202, 200, 0.302);
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
+}
+.shape0{
+    left: 135px;
+    top: 135px;
+}
+.shape1{
+    left: 285px;
+    top: 135px;
+}
+.shape2{
+    left: 435px;
+    top: 135px;
+}
+.shape3{
+    left: 135px;
+    top: 285px;
+}
+.shape4{
+    left: 285px;
+    top: 285px;
+}
+.shape5{
+    left: 435px;
+    top: 285px;
+}
+.shape6{
+    left: 135px;
+    top: 435px;
+}
+.shape7{
+    left: 285px;
+    top: 435px;
+}
+.shape8{
+    left: 435px;
+    top: 435px;
+}
+
+
+
+
+
+
+
+
+
+
+.trackerContainer{
+    /* position: relative; */
+    width: 50%;
+    height: auto;
+}
+
+
+.questionaryContainer{
+    display: block;
+    width: 100%;
+    height: auto;
+    visibility: hidden 
+}
+
+
+
+
+
+/*
+Note:
+Using css width and height will cause an offset. To set these values, use in-line
+width and height, not style-ones.
+*/
+
+.trackerBackground{
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 135px;
+    left: 135px;
+}
+.tracker{
+    position: absolute;
+    background-color: transparent;
+    width: 500px;
+    height: 500px;
+    top: 60px;
+    left: 60px;
+    background-color: rgba(226, 226, 226, 0.219);
+}
+.canvas2{
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    top: 600px;
+    left: 75px;
+}
+
+
+
+#animateButton {
+    background-color:rgba(204, 202, 200, 0.302);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 500s;
+}
+
+
+.timeControl{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+    .timeLabel{
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0px 5px;
+    }
+    .clickTime{
+        font-size: 20px;
+        border-radius: 5px;
+        border: solid 1px grey;
+        margin: 0 5px;
+        padding: 0 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    #click-animation {
+        position: absolute; /* Absolute positioning */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s, transform 0.4s;
+        z-index: 200;
+        background-color: rgba(128, 0, 128, 0.576);
+      }
+      
+      #click-animation.active {
+        opacity: 1;
+        transform: scale(2);
+      }
+      
+      
+      
+      
+      
+      

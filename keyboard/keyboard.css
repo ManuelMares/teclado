@@ -1,0 +1,64 @@
+:root {
+    --size: 60px;
+    --length: 500px;
+    --half-length: 250px;
+    --half-begin: 225px;
+    --length-begin: 450px;
+  }
+
+body{
+    position: relative;
+}
+.canvas{
+    background-color: rgb(95, 63, 63);
+    width: var(--length);
+    height: var(--length);
+    position: absolute;
+    left: var(--size);
+    top: var(--size);
+}
+
+
+
+.shape{
+    background-color:red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+.shape0{
+    left: 0px;
+    top:0px;
+}
+.shape1{
+    left:var(--half-begin);
+    top:0px;
+}
+.shape2{
+    left: var(--length-begin);
+    top: 0px;
+}
+.shape3{
+    left:0px;
+    top:var(--half-begin);
+}
+.shape4{
+    left:var(--half-begin);
+    top:var(--half-begin);
+}
+.shape5{
+    left: var(--length-begin);
+    top: var(--half-begin);
+}
+.shape6{
+    left: 0px;
+    top: var(--length-begin);
+}
+.shape7{
+    left: var(--half-begin);
+    top: var(--length-begin);
+}
+.shape8{
+    left: var(--length-begin);
+    top: var(--length-begin);
+}

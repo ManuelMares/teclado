@@ -1,0 +1,157 @@
+
+body{
+    width: 90vw;
+    height: 90vh;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr;
+    height: 100%;
+    width: 100%;
+}
+
+.BFS_answer{
+    grid-area: 2/1/3/2;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 5px 5px 5px 5px rgba(75, 75, 75, 0.616);
+    border-radius: 10px;
+    padding: 10px;
+    tab-size: 1;
+    white-space: break-spaces;
+    margin: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+}
+.optimalPath{
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    grid-area: 2/2/3/3;
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 5px 5px 5px 5px rgba(75, 75, 75, 0.616);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    text-wrap: nowrap;
+}
+.first{
+    grid-area: 1/1/2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px;
+    padding: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0px; 
+}
+
+.inputDiv{
+    grid-area: 1/1;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    border-radius: 10px;
+    outline: solid 2px rgb(221, 219, 219);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.builder{
+    grid-area: 2/1;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    margin: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 6fr;
+
+    background-color: rgb(235, 235, 235);
+}
+
+
+
+
+.currentInput{
+    width: 100%;
+    height: 10%;
+}
+.instructions{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.selector{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100% - 20px);
+    height: 80%;
+    margin: 10px;
+    padding: 0;
+    
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: white;
+} 
+.option:hover{
+        box-shadow: 5px 5px 10px rgba(44, 44, 44, 0.301);
+    }
+    .option:active{
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px inset;
+    }
+.option .p{
+    font-size: 30px;
+    font-weight: 800;
+} 
+
+
+.up{
+    grid-area: 1/2;
+}
+.right{
+    grid-area: 2/3;
+}
+.down{
+    grid-area: 3/2;
+}
+.left{
+    grid-area: 2/1;
+}
+.center{
+    grid-area: 2/2;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+

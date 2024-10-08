@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="patternMap.css"/>
+    <script src="patternMap.js" type="module"></script>
+    <script src="clickController.js" type="module"></script>
+    <title>Keyboard page</title>
+</head>
+<body>
+    <div id="click-animation"></div>
+
+
+    <!-- tracker -->
+    <div id="trackerContainer" class="trackerContainer">
+        <canvas id="canvas2" class="canvas2" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+        <img src="" id="trackerBackground" class="trackerBackground" width="500" height="500" id="background"></img>
+
+        
+        <div id="shape0" class="clickable shape shape0">0</div>
+        <div id="shape1" class="clickable shape shape1">1</div>
+        <div id="shape2" class="clickable shape shape2">2</div>
+        <div id="shape3" class="clickable shape shape3">3</div>
+        <div id="shape4" class="clickable shape shape4">4</div>
+        <div id="shape5" class="clickable shape shape5">5</div>
+        <div id="shape6" class="clickable shape shape6">6</div>
+        <div id="shape7" class="clickable shape shape7">7</div>
+        <div id="shape8" class="clickable shape shape8">8</div>
+
+    
+        <canvas id="tracker" width="500" height="500" class="clickable tracker"></canvas>
+        <label>Repetitions: </label><label  id="repetitionsCounter" class="repetitionsCounter">0</label>
+        
+        <div class="timeControl" id="timeControl">
+            <label  class="timeLabel" for="click time">Time for click (seconds)</label> 
+            <input  class="clickTime" id="clickTime" type="number" step=".1" value="1.7"><br>
+            <button class="clickable IncreaseTimeButton" id="IncreaseTimeButton">+0.1s</button>
+            <button class="clickable DecreaseTimeButton" id="DecreaseTimeButton">-0.1s</button>
+        </div>
+
+    </div>
+
+    <div id="controlerContainers" class="controlerContainers">
+        <h1>Welcome to the pattern tracker for the custom joystick-controlled keyboard</h1>
+        <br>
+            Please use your joystick to attempt to replicate the shape you see in the screen.
+            You will attempt each shape <b>10 times</b>. </br>
+            We are trying to understand how would you make this shape in your day-to-day.
+            <b style="color: blue">The more relaxed you are while drawing, the better!</b>
+        </p>
+        <!-- <button id="start">Start Drawing</button>
+        <button id="clear">Clear Canvas</button> -->
+
+
+
+        <div class="questionaryContainer" id="questionaryContainer">
+            <h1>Questionary</h1>
+            <br>
+            <!-- <form> -->
+                <fieldset>
+                    <legend>1) It was easy to replicate the shape with the given setup (joystick and computer).</legend>
+                    <div>            
+                        <input class="clickable" type="radio" id="StronglyAgree" name="question1" value="StronglyAgree" />
+                        <label class="clickable StronglyAgree" for="StronglyAgree">Strongly Agree</label>
+                        
+                        <input class="clickable" type="radio" id="Agree" name="question1" value="Agree" />
+                        <label class="clickable Agree" for="Agree">Agree</label>
+                        
+                        <input class="clickable" type="radio" id="SomewhatAgree" name="question1" value="SomewhatAgree" />
+                        <label class="clickable SomewhatAgree" for="SomewhatAgree">Somewhat Agree</label>
+                        
+                        <input class="clickable" type="radio" id="SomewhatDisagree" name="question1"  value="SomewhatDisagree" />
+                        <label class="clickable SomewhatDisagree" for="SomewhatDisagree">Somewhat Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="Disagree" name="question1" value="Disagree" />
+                        <label class="clickable Disagree" for="Disagree">Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="StronglyDisagree" name="question1" value="StronglyDisagree" />
+                        <label class="clickable StronglyDisagree" for="StronglyDisagree">Strongly Disagree</label>
+                    </div>
+                </fieldset>
+                </br>
+                <fieldset>
+                    <legend>2) I think I could perform this movement with my day-to-day setup as well as I did with the setup used during the study.</legend>
+                    <div>            
+                        <input class="clickable" type="radio" id="StronglyAgree2" name="question2" value="StronglyAgree" />
+                        <label class="clickable StronglyAgree2" for="StronglyAgree2">Strongly Agree</label>
+                        
+                        <input class="clickable" type="radio" id="Agree2" name="question2" value="Agree" />
+                        <label class="clickable Agree2" for="Agree2">Agree</label>
+                        
+                        <input class="clickable" type="radio" id="SomewhatAgree2" name="question2" value="SomewhatAgree" />
+                        <label class="clickable SomewhatAgree2" for="SomewhatAgree2">Somewhat Agree</label>
+                        
+                        <input class="clickable" type="radio" id="SomewhatDisagree2" name="question2"  value="SomewhatDisagree" />
+                        <label class="clickable SomewhatDisagree2" for="SomewhatDisagree2">Somewhat Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="Disagree2" name="question2" value="Disagree" />
+                        <label class="clickable Disagree2" for="Disagree2">Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="StronglyDisagree2" name="question2" value="StronglyDisagree" />
+                        <label class="clickable StronglyDisagree2" for="StronglyDisagree2">Strongly Disagree</label>
+                    </div>
+                </fieldset>
+                </br>
+                <fieldset>
+                    <legend>3) Replicating the shape required me to perform an uncomfortable movement, or a movement I could not do consistently.</legend>
+                    <div>            
+                        <input class="clickable" type="radio" id="StronglyAgree3" name="question3" value="StronglyAgree" />
+                        <label class="clickable StronglyAgree3" for="StronglyAgree3">Strongly Agree</label>
+                        
+                        <input class="clickable" type="radio" id="Agree3" name="question3" value="Agree" />
+                        <label class="clickable Agree3" for="Agree3">Agree</label>
+                        
+                        <input class="clickable" type="radio" id="Somewhat3Agree" name="question3" value="SomewhatAgree" />
+                        <label class="clickable SomewhatAgree3" for="SomewhatAgree3">Somewhat Agree</label>
+                        
+                        <input class="clickable" type="radio" id="SomewhatDisagree3" name="question3"  value="SomewhatDisagree" />
+                        <label class="clickable SomewhatDisagree3" for="SomewhatDisagree3">Somewhat Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="Disagree3" name="question3" value="Disagree" />
+                        <label class="clickable Disagree3" for="Disagree3">Disagree</label>
+                        
+                        <input class="clickable" type="radio" id="StronglyDisagree3" name="question3" value="StronglyDisagree" />
+                        <label class="clickable StronglyDisagree3" for="StronglyDisagree3">Strongly Disagree</label>
+                    </div>
+                </fieldset>
+
+                
+                <button id="submitButton" class="clickable submitButton">Submit</button>
+
+            <!-- </form> -->
+        </div>
+    </div>
+
+</body>
+</html>
