@@ -117,10 +117,7 @@ let shape4Hovered = false;
 let shape4 = document.querySelector("#shape4");
 shape4.addEventListener('mouseup', ()=>{shape4Hovered = true})
 shape4.addEventListener('mouseout', ()=>{shape4Hovered = false})
-function startDrawing() {
-    console.log("shape4: ", shape4Hovered);
-    //add a validation such that
-    //if(currentObjectThatMouseIshovering != "shape4") return;
+function startDrawing(e) {
     if(isQuestionary) return
     ctx1.beginPath();
 }
@@ -134,7 +131,7 @@ function draw(e) {
     ctx1.stroke();
 }
 
-function stopDrawing() {
+function stopDrawing(e) {
     if (!isDrawing) return;
     ctx2.drawImage(tracker, 0, 0);
     ctx1.clearRect(0, 0, tracker.width, tracker.height);
@@ -142,19 +139,28 @@ function stopDrawing() {
     repetitionsCounter.innerText = shapeAttempsIndex;
 }
 
-function drawingController(){
+function drawingController(e){
     if (isDrawing)
     {
-        stopDrawing();
+        stopDrawing(e);
         isDrawing = false;
     }
     else
     {
-        startDrawing();
-        isDrawing = true;
+        let x = e.clientX || e.touches[0].clientX;
+        let y = e.clientY || e.touches[0].clientY;
+        if(x < 290 || x > 330 || y < 290 || y > 330)
+        {
+            console.log("No good start");
+            return;
+        }
+        else{
+            startDrawing(e);
+            isDrawing = true;
+        }
     }
 }
-tracker.addEventListener('click', drawingController);
+tracker.addEventListener('click', (e)=>{drawingController(e)});
 tracker.addEventListener('mousemove', draw);
 
 
